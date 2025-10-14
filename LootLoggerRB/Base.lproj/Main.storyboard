@@ -82,6 +82,11 @@
                                         <constraint firstAttribute="trailing" secondItem="Jyy-Ol-1FS" secondAttribute="trailing" constant="30" id="eFd-gb-Z33"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="PFH-Un-VY3" id="PTv-T5-9OK"/>
+                                    <outlet property="serialNumberLabel" destination="yoY-PT-kN7" id="Yqt-Gm-PAG"/>
+                                    <outlet property="valueLabel" destination="Jyy-Ol-1FS" id="PGF-1d-WRW"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
