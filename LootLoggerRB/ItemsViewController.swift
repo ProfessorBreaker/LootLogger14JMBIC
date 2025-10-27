@@ -11,7 +11,7 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         // Create a new item and add it to the store
             let newItem = itemStore.createItem()
 
@@ -24,22 +24,22 @@ class ItemsViewController: UITableViewController {
             }
        }
 
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        // If you are currently in editing mode...
-            if isEditing {
-                // Change text of button to inform user of state
-                sender.setTitle("Edit", for: .normal)
-
-                // Turn off editing mode
-                setEditing(false, animated: true)
-            } else {
-                // Change text of button to inform user of state
-                sender.setTitle("Done", for: .normal)
-
-                // Enter editing mode
-                setEditing(true, animated: true)
-            }
-       }
+//    @IBAction func toggleEditingMode(_ sender: UIButton) {
+//        // If you are currently in editing mode...
+//            if isEditing {
+//                // Change text of button to inform user of state
+//                sender.setTitle("Edit", for: .normal)
+//
+//                // Turn off editing mode
+//                setEditing(false, animated: true)
+//            } else {
+//                // Change text of button to inform user of state
+//                sender.setTitle("Done", for: .normal)
+//
+//                // Enter editing mode
+//                setEditing(true, animated: true)
+//            }
+//       }
     
     override func tableView(_ tableView: UITableView,
             numberOfRowsInSection section: Int) -> Int {
@@ -103,6 +103,12 @@ class ItemsViewController: UITableViewController {
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {

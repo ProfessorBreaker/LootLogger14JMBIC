@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items View Controller-->
+        <!--LootLogger-->
         <scene sceneID="6aj-3e-Hrg">
             <objects>
                 <tableViewController id="b2Y-tn-ygT" customClass="ItemsViewController" customModule="LootLoggerRB" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,40 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="opD-m1-jda">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiO-pe-The">
-                                    <rect key="frame" x="8" y="12.666666666666664" width="184.66666666666666" height="35"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Edit"/>
-                                    <connections>
-                                        <action selector="toggleEditingMode:" destination="b2Y-tn-ygT" eventType="touchUpInside" id="Bzl-2d-uvm"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcc-0L-bwC">
-                                    <rect key="frame" x="200.66666666666663" y="12.666666666666664" width="184.33333333333337" height="35"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Add"/>
-                                    <connections>
-                                        <action selector="addNewItem:" destination="b2Y-tn-ygT" eventType="touchUpInside" id="x1T-N6-7wB"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="lcc-0L-bwC" firstAttribute="centerY" secondItem="opD-m1-jda" secondAttribute="centerY" id="5YG-uo-xnG"/>
-                                <constraint firstItem="tiO-pe-The" firstAttribute="centerY" secondItem="opD-m1-jda" secondAttribute="centerY" id="ZIH-mA-LbN"/>
-                                <constraint firstItem="lcc-0L-bwC" firstAttribute="leading" secondItem="tiO-pe-The" secondAttribute="trailing" constant="8" id="eX0-3J-J4I"/>
-                                <constraint firstAttribute="trailing" secondItem="lcc-0L-bwC" secondAttribute="trailing" constant="8" id="fCw-A9-NbT"/>
-                                <constraint firstItem="tiO-pe-The" firstAttribute="leading" secondItem="opD-m1-jda" secondAttribute="leading" constant="8" id="k8A-KN-VKF"/>
-                                <constraint firstItem="lcc-0L-bwC" firstAttribute="width" secondItem="tiO-pe-The" secondAttribute="width" id="uRG-rl-wjF"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="xdH-iI-hWH" customClass="ItemCell" customModule="LootLoggerRB" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="110" width="393" height="65"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xdH-iI-hWH" id="j9X-Eo-Vq2">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="65"/>
@@ -97,7 +66,13 @@
                             <outlet property="delegate" destination="b2Y-tn-ygT" id="vXB-pR-9wq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9hj-FI-hzO"/>
+                    <navigationItem key="navigationItem" title="LootLogger" id="m69-SE-5LD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MA7-Av-XrM">
+                            <connections>
+                                <action selector="addNewItem:" destination="b2Y-tn-ygT" id="Z15-XX-onL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tt8-Rz-GNP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
